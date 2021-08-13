@@ -3,6 +3,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.beans.factory.annotation.Value;
 
 
 @RestController
@@ -10,8 +11,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class Controller {
     @PostMapping(value = "/postbody")
        
-    public Employee employee(@RequestBody Employee employee){
-        return employee;
+    public PaySlip[] payslip(@RequestBody Employee[] employeeArray, @Value("${tax-bracket}") float[] taxBracket, @Value("${base-tax}") float[] baseTax, @Value("${tax-rate}") double[] taxRate){
+
+        PaySlip[] paySlips = new PaySlip[employeeArray.length];
+
+        for (int i = 0; i < employeeArray.length; i++) {
+            paySlips[i] = new PaySlip(employeeArray[i], taxBracket,baseTax, taxRate);
+        }
+        return paySlips;
     }
-    
 }

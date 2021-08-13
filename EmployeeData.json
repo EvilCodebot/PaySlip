@@ -1,0 +1,27 @@
+[
+    {
+    "firstName":"David",
+    "lastName":"Rudd",
+    "annualSalary":60050,
+    "superRate":0.09
+    },
+    {
+    "firstName":"Ryan",
+    "lastName":"Chen",
+    "annualSalary":120000,
+    "superRate":0.1
+    },
+    {
+    "firstName":"Joe",
+    "lastName":"Smith",
+    "annualSalary":15310,
+    "superRate":0.07
+    },
+    {
+    "firstName":"Sunny",
+    "lastName":"Wang",
+    "annualSalary":190400,
+    "superRate":0.12
+    }
+]
+
