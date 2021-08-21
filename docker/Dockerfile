@@ -4,7 +4,7 @@ LABEL maintainer=”Alan”
 
 RUN apk update
 # install tini
-RUN apk add — no-cache tini
+RUN apk add —no-cache tini
 COPY target/rest-service-0.0.1-SNAPSHOT.jar /bin
 
 VOLUME /bin
