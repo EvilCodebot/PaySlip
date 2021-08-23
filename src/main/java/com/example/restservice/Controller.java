@@ -5,9 +5,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.beans.factory.annotation.Value;
 
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 @RestController
-@RequestMapping("/response")
+// @RequestMapping("/response")
 public class Controller {
     @PostMapping(value = "/postbody")
        
@@ -19,5 +21,10 @@ public class Controller {
             paySlips[i] = new PaySlip(employeeArray[i], taxBracket,baseTax, taxRate);
         }
         return paySlips;
+    }
+
+    @GetMapping("/")
+    public String hello() {
+    return String.format("Hello!");
     }
 }
